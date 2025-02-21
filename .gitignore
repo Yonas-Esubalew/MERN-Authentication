@@ -1,0 +1,82 @@
+# Node.js Dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log
+pnpm-debug.log
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Logs
+logs
+*.log
+logs/
+*.log*
+debug.log*
+error.log*
+server.log*
+pm2.log*
+.log
+
+# Environment Variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.example
+
+# Database Files
+*.sqlite
+*.sqlite3
+dump.rdb
+mongod.lock
+mongodb/data/
+data/
+db/
+local/
+
+# Production Builds
+build/
+dist/
+.out/
+.next/
+.cache/
+
+# Temporary Files & IDE Settings
+tmp/
+temp/
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Linting & Formatting
+.eslintcache
+.prettiercache
+
+# Test Coverage & Cypress
+coverage/
+.nyc_output/
+cypress/videos/
+cypress/screenshots/
+
+# Deployment & Hosting
+.vercel/
+.netlify/
+firebase-debug.log
+functions/node_modules/
+public/
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# AWS & Firebase
+.aws/
+.firebaserc
+.firebase/
+storage.rules.bak
