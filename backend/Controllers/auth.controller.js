@@ -252,3 +252,29 @@ export async function resetPassword(req, res) {
     });
   }
 }
+
+export async function checkAuth(req, res) {
+    try {
+      const user = await UserModel.findById(req.userId).select("-password");
+      if(!user) {   
+        return res.status(400).json({
+            message: "User not found",
+            error: true,
+            success: false    
+        });
+      }
+        return res.json({
+            message: "User is authenticated",
+            user,
+            error: false,
+            success: true
+        });
+    } catch (error) {
+        console.log("Error in checkAuth",error);
+        return res.status(500).json({
+            message: error.message || error,
+            error: true,
+            success: false
+        });
+    }
+}

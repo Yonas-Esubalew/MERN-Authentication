@@ -1,5 +1,5 @@
 import { mailtrapClient, sender } from "./mailtrap.config.js";
-import { PASSWORD_RESET_SUCCESS_TEMPLATE, VERIFICATION_EMAIL_TEMPLATE } from "./emailTEmplates.js";
+import { PASSWORD_RESET_SUCCESS_TEMPLATE, VERIFICATION_EMAIL_TEMPLATE ,PASSWORD_RESET_REQUEST_TEMPLATE} from "./emailTEmplates.js";
 
 export const sendVerificationEmail = async (email, verificationToken) =>  {
     const recipient = [{email}]
