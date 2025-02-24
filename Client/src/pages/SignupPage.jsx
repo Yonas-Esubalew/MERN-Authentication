@@ -1,17 +1,31 @@
 import { motion } from "framer-motion";
 import Input from "../components/input.jsx";
 import { useState } from "react";
-import { Mail, User, Lock } from "lucide-react";
+import { Mail, User, Lock, Loader } from "lucide-react";
 import { Link } from "react-router-dom";
 import PasswordStrengthMeter from "../components/PasswordStrengthMeter.jsx";
+import { useAuthStore } from "../store/authStore.jsx";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast"
 
 const SignupPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { signup,error,isLoading } = useAuthStore();
+  const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      await signup(email,name,password)
+      toast.success("User register successfully!👏");
+      navigate("/verify-email")
+    } catch (error) {
+      console.log(error);
+      
+    }
   };
   return (
     <motion.div
@@ -46,6 +60,7 @@ const SignupPage = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          {error && <p className="text-red-500 font-semi-bold mt-2">{error} </p>}
           <PasswordStrengthMeter password={password} />
           <motion.button
             className="mt-5 w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white 
@@ -55,8 +70,9 @@ const SignupPage = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
+            disabled= {isLoading}
           >
-            Sign Up
+           {isLoading ? <Loader className="animate-spin mx-auto"/> : "Sign Up"}
           </motion.button>
         </form>
       </div>
