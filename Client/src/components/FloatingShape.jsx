@@ -17,7 +17,7 @@ const FloatingShape = ({color,size,top,delay,left}) => {
       delay,
     }}
     aria-hidden="true"
-    >FloatingShape</motion.div>
+    ></motion.div>
   )
 }
 export default FloatingShape
