@@ -1,12 +1,12 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
 import { useAuthStore } from "../store/authStore";
 import Input from "../components/input";
-import { ArrowLeft, Loader, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
-
+import { Mail,ArrowLeft,Loader } from "lucide-react";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Link} from "react-router-dom";
+import toast from "react-hot-toast"
 const ForgotPasswordPage = () => {
-	const [email, setEmail] = useState("");
+const [email, setEmail] = useState("");
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
 	const { isLoading, forgotPassword } = useAuthStore();
@@ -15,6 +15,7 @@ const ForgotPasswordPage = () => {
 		e.preventDefault();
 		await forgotPassword(email);
 		setIsSubmitted(true);
+		toast.success("Password reset link sent to your email👉")
 	};
 
 	return (
@@ -77,3 +78,4 @@ const ForgotPasswordPage = () => {
 	);
 };
 export default ForgotPasswordPage;
+

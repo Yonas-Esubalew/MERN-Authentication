@@ -14,7 +14,6 @@ const SignupPage = () => {
   const [password, setPassword] = useState("");
   const { signup,error,isLoading } = useAuthStore();
   const navigate = useNavigate()
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -85,7 +84,8 @@ const SignupPage = () => {
           </Link>
         </p>
       </div>
-    </motion.div>
+    </motion.div> 
+    
   );
 };
 

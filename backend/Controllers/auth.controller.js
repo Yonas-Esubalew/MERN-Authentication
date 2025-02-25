@@ -207,7 +207,6 @@ export async function forgotPassword(req, res) {
     });
   }
 }
-
 //reset password
 export async function resetPassword(req, res) {
   const {newPassword, confirmPassword } = req.body;
@@ -252,7 +251,6 @@ export async function resetPassword(req, res) {
     });
   }
 }
-
 export async function checkAuth(req, res) {
     try {
       const user = await UserModel.findById(req.userId).select("-password");

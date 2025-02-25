@@ -1,7 +1,6 @@
 import { Check, X } from "lucide-react";
 import PropTypes from "prop-types";
 
-
 const PasswordCriteria = ({ password = "" }) => {
   if (!password) return null;
   const criteria = [

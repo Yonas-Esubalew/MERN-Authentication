@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Mail, Lock, Loader } from "lucide-react";
 import { Link } from "react-router-dom";
 import {useAuthStore} from "../store/authStore.jsx";
+import toast from "react-hot-toast"
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -13,6 +14,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     await login(email, password);
+    toast.success("Login Successfully!")
   };
   return (
     <motion.div
@@ -81,3 +83,5 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+

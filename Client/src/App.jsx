@@ -11,6 +11,8 @@ import { Navigate } from "react-router-dom";
 import DashboardPage from "../src/pages/DashboardPage.jsx"
 import LoadingSpinner from "./components/LoadingSpinner.jsx";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage.jsx";
+import ResetPassword from "./pages/ResetPassword.jsx";
+
 
 const ProtectedRoute = ({children}) => {
   const {isAuthenticated, user } = useAuthStore()
@@ -82,6 +84,10 @@ function App() {
         <Route path="/forgot-password" element={<RedirectAuthenticatedUser>
             <ForgotPasswordPage/>
           </RedirectAuthenticatedUser>}/>
+          <Route path="/reset-password/:token" element={<RedirectAuthenticatedUser>
+            <ResetPassword/>
+          </RedirectAuthenticatedUser>}/>
+
       </Routes>
       <Toaster/>
     </div>

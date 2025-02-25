@@ -20,5 +20,4 @@ const FloatingShape = ({color,size,top,delay,left}) => {
     >FloatingShape</motion.div>
   )
 }
-
 export default FloatingShape
