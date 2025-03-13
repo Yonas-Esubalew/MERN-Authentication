@@ -209,13 +209,20 @@ export async function forgotPassword(req, res) {
 }
 //reset password
 export async function resetPassword(req, res) {
-  const {newPassword, confirmPassword } = req.body;
+  const { newPassword, confirmPassword } = req.body;
   try {
     const { token } = req.params;
     const user = await UserModel.findOne({
       resetPasswordToken: token,
       resetPasswordExpiresAt: { $gt: Date.now() },
     });
+    if (!newPassword || !confirmPassword) {
+      return res.status(400).json({
+        message: "Fill All required fields",
+        error: true,
+        success: false,
+      });
+    }
     if (!user) {
       return res.status(400).json({
         message: "Invalid reset token",
@@ -252,27 +259,27 @@ export async function resetPassword(req, res) {
   }
 }
 export async function checkAuth(req, res) {
-    try {
-      const user = await UserModel.findById(req.userId).select("-password");
-      if(!user) {   
-        return res.status(400).json({
-            message: "User not found",
-            error: true,
-            success: false    
-        });
-      }
-        return res.json({
-            message: "User is authenticated",
-            user,
-            error: false,
-            success: true
-        });
-    } catch (error) {
-        console.log("Error in checkAuth",error);
-        return res.status(500).json({
-            message: error.message || error,
-            error: true,
-            success: false
-        });
+  try {
+    const user = await UserModel.findById(req.userId).select("-password");
+    if (!user) {
+      return res.status(400).json({
+        message: "User not found",
+        error: true,
+        success: false,
+      });
     }
+    return res.json({
+      message: "User is authenticated",
+      user,
+      error: false,
+      success: true,
+    });
+  } catch (error) {
+    console.log("Error in checkAuth", error);
+    return res.status(500).json({
+      message: error.message || error,
+      error: true,
+      success: false,
+    });
+  }
 }
