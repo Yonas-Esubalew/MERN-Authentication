@@ -25,7 +25,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
   });
 }
-
 app.listen(PORT, () => {
   connectDB();
   console.log(`This server is running on ${PORT}👨‍💻`);
