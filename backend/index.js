@@ -16,7 +16,7 @@ app.use(cors({origin: "http://localhost:5173", credentials: true
 app.use(cookieParser());
 app.use(express.json()); //allows the data is parse to the json format
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 app.use("/api/user", authRoutes)
 
 if (process.env.NODE_ENV === "production") {
