@@ -12,6 +12,7 @@ import DashboardPage from "./pages/DashboardPage.jsx";
 import LoadingSpinner from "./components/LoadingSpinner.jsx";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage.jsx";
 import ResetPassword from "./pages/ResetPassword.jsx";
+import React from "react";
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, user } = useAuthStore();
