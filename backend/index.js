@@ -11,7 +11,7 @@ import authRoutes from "../backend/routes/authRoutes.js"
 const __dirname = path.resolve();
 const app = express();
 
-app.use(cors({origin: "http://localhost:5173", credentials: true
+app.use(cors({origin: "https://mern-authentication-1-1q3e.onrender.com", credentials: true
 }))
 app.use(cookieParser());
 app.use(express.json()); //allows the data is parse to the json format
