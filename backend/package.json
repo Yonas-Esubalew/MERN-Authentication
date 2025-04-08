@@ -23,6 +23,7 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mailtrap": "^3.4.0",
+    "mern-authentication": "file:..",
     "mongoose": "^8.10.1",
     "tailwindcss": "^4.0.8"
   },
