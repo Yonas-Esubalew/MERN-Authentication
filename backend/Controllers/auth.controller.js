@@ -153,6 +153,8 @@ export async function Login(req, res) {
     });
   }
 }
+
+
 //logout
 export async function Logout(req, res) {
   try {
@@ -170,6 +172,7 @@ export async function Logout(req, res) {
     });
   }
 }
+
 //forgot password
 export async function forgotPassword(req, res) {
   const { email } = req.body;
@@ -207,6 +210,7 @@ export async function forgotPassword(req, res) {
     });
   }
 }
+
 //reset password
 export async function resetPassword(req, res) {
   const { newPassword, confirmPassword } = req.body;
@@ -258,6 +262,7 @@ export async function resetPassword(req, res) {
     });
   }
 }
+
 export async function checkAuth(req, res) {
   try {
     const user = await UserModel.findById(req.userId).select("-password");
