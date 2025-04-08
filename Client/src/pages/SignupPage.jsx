@@ -22,6 +22,7 @@ const SignupPage = () => {
       toast.success("User register successfully!👏");
       navigate("/verify-email")
     } catch (error) {
+      toast.error(error?.message || "Signup failed");
       console.log(error);
       
     }
