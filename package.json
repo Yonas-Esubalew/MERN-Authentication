@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install-all": "npm install --prefix backend && npm install --prefix client",
-    "build": "npm run build --prefix client",
+    "install-all": "npm install --prefix backend && npm install --prefix Client",
+    "build": "npm run build --prefix Client",
     "start": "cross-env NODE_ENV=production node backend/index.js",
     "dev": "cross-env NODE_ENV=development nodemon backend/index.js"
   },
