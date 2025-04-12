@@ -2,7 +2,7 @@
 
 A secure and full-featured **authentication system** built with the MERN stack (MongoDB, Express.js, React.js, and Node.js). This project includes features like user registration, login, protected routes, JWT-based authentication, and role-based access (admin/user).
 
-![Auth System Screenshot](https://github.com/Yonas-Esubalew/MERN-Chat-Application/blob/master/image_original%20(3).jpg?raw=true)
+![Homepage Screenshot](https://github.com/Yonas-Esubalew/MERN-Authentication/blob/master/screenshot-for-readme.png?raw=true)
 
 ---
 
