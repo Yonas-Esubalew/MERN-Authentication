@@ -46,7 +46,7 @@ A secure and full-featured **authentication system** built with the MERN stack (
 
 ### 📁 Clone the Repository
 
-```bash
+
 git clone https://github.com/Yonas-Esubalew/mern-authentication-system.git
 cd mern-authentication-system
 🔧 Install Dependencies
