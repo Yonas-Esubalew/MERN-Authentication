@@ -142,12 +142,11 @@ Railway – https://railway.app
 
 Vercel – https://vercel.com
 
-👨‍💻 Author
-Author: Yonas Esubalew
+## 👨‍💻 Author
 
-Email: yonasatwork999@gmail.com
-
-Website: yonas-esubalew.vercel.app
+- **Author**: [Yonas Esubalew](https://github.com/Yonas-Esubalew)  
+- **Email**: yonasatwork999@gmail.com  
+- **Website**: [https://yonas-esubalew.vercel.app](https://yonas-esubalew.vercel.app)
 
 🌍 Demo
 Try the live demo here:
